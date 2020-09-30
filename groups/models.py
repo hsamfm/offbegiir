@@ -9,3 +9,7 @@ class FGroup(models.Model):
     picture = models.ImageField(_('picture'), upload_to='media/posts/', null=True, blank=True)
     name = models.CharField(_('name'), max_length=250, null=True, blank=True)
     count = models.IntegerField(_('count'), null=True, blank=True)
+
+
+    def __str__(self):
+        return self.name

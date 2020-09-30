@@ -2,7 +2,6 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from phonenumber_field.modelfields import PhoneNumberField
 
-
 # Create your models here.
 from users.models import CustomUser
 
@@ -14,3 +13,6 @@ class Shop(models.Model):
     tel = PhoneNumberField()
     dt = models.DateTimeField(auto_now_add=True)
     user_id = models.OneToOneField(CustomUser, on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return self.name

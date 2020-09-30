@@ -14,3 +14,7 @@ class Order(models.Model):
     customerid = models.CharField(_('customer id'), max_length=250, null=True, blank=True)
     payid = models.CharField(_('pay id'), max_length=250, null=True, blank=True)
     pay_amount = models.IntegerField(_('pay amount'), null=True, blank=True)
+
+    def __str__(self):
+        return self.did.name
+

@@ -25,3 +25,6 @@ class Doll(models.Model):
     meta_word = models.CharField(_('meta word'), max_length=250, null=True, blank=True)
     meta_description = models.CharField(_('meta description'), max_length=250, null=True, blank=True)
     doll_count = models.IntegerField(_('doll count'), default=0, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
